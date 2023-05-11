@@ -1,12 +1,15 @@
 $(document).ready(function () {
-    // Inisialisasi peta
+    // inisialisasi map
     const mymap = L.map('mapid').setView([-7.312840928060894, 112.79138725175287], 15);
-    L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    L.tileLayer('https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
         attribution: 'Persebaran Barbershop',
         maxZoom: 18,
     }).addTo(mymap);
 
-    // Load data dari MySQL
+    // Layer
+    const circleLayer = L.layerGroup().addTo(mymap);
+
+    // load data
     function loadData() {
         $.ajax({
             url: "load_data.php",
@@ -14,11 +17,26 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 if (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        var lat = parseFloat(data[i].latitude);
-                        var lng = parseFloat(data[i].longitude);
+                    // node
+                    for (var i = 0; i < data.markers.length; i++) {
+                        var lat = parseFloat(data.markers[i].latitude);
+                        var lng = parseFloat(data.markers[i].longitude);
                         var marker = L.marker([lat, lng]).addTo(mymap);
-                        marker.bindPopup("<b>Nama Lokasi:</b> " + data[i].nama_lokasi);
+                        marker.bindPopup("<b>Nama Lokasi:</b> " + data.markers[i].nama_lokasi);
+                    }
+
+                    // circles
+                    for (var i = 0; i < data.circles.length; i++) {
+                        var lat = parseFloat(data.circles[i].latitude);
+                        var lng = parseFloat(data.circles[i].longitude);
+                        var radius = parseFloat(data.circles[i].radius);
+                        var circle = L.circle([lat, lng], {
+                            color: 'bluelight',
+                            fillColor: 'blue',
+                            fillOpacity: 0.2,
+                            radius: radius
+                        }).addTo(circleLayer);
+                        circle.bindPopup("Barbershop yang masuk kawasan UPN dalam radius 2km");
                     }
                 }
             },
