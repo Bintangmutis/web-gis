@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Persebaran Barbershop</title>
+    <title>Persebaran Barbershop di Rungkut Surabaya</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      #header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-size: 2rem;
+      }
       #mapid {
-        height: 800px;
+        height: 700px;
         width: 100%;
       }
     </style>
   </head>
   <body>
+    <div id="header">Persebaran Barbershop di Rungkut Surabaya</div>
     <div id="mapid"></div>
     <script src="main.js"></script>
   </body>

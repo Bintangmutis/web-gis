@@ -8,6 +8,7 @@ $(document).ready(function () {
 
   // Layer
   const circleLayer = L.layerGroup().addTo(mymap);
+  const polygonLayer = L.layerGroup().addTo(mymap);
 
   // load data
   function loadData() {
@@ -46,7 +47,7 @@ $(document).ready(function () {
               return [coord.latitude, coord.longitude];
             });
             var polygon = L.polygon(latLngs, { color: "redlight", fillColor: "green" }).addTo(
-              mymap
+              polygonLayer
             );
             polygon.bindPopup("<b>Nama Lokasi:</b> " + data.polygons[i].nama_lokasi);
           }
