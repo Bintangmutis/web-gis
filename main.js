@@ -38,6 +38,18 @@ $(document).ready(function () {
             }).addTo(circleLayer);
             circle.bindPopup("Barbershop yang masuk kawasan UPN dalam radius 2km");
           }
+
+          // polygons
+          for (var i = 0; i < data.polygons.length; i++) {
+            var coordinates = JSON.parse(data.polygons[i].coordinates);
+            var latLngs = coordinates.map(function (coord) {
+              return [coord.latitude, coord.longitude];
+            });
+            var polygon = L.polygon(latLngs, { color: "redlight", fillColor: "green" }).addTo(
+              mymap
+            );
+            polygon.bindPopup("<b>Nama Lokasi:</b> " + data.polygons[i].nama_lokasi);
+          }
         }
       },
       error: function (_jqXHR, textStatus, errorThrown) {

@@ -33,8 +33,21 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data['circles'][] = $row;
     }
+}else {
+    echo "0 results";
 }
 
+// Fetch polygon data
+$sql = "SELECT * FROM polygons";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $data['polygons'][] = $row;
+    }
+} else {
+    echo "0 results";
+}
 echo json_encode($data);
 
 $conn->close();
