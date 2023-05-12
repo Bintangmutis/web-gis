@@ -1,9 +1,6 @@
 $(document).ready(function () {
   // inisialisasi map
-  const mymap = L.map("mapid").setView(
-    [-7.312840928060894, 112.79138725175287],
-    15
-  );
+  const mymap = L.map("mapid").setView([-7.312840928060894, 112.79138725175287], 15);
   L.tileLayer("https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
     attribution: "Persebaran Barbershop",
     maxZoom: 18,
@@ -25,9 +22,7 @@ $(document).ready(function () {
             var lat = parseFloat(data.markers[i].latitude);
             var lng = parseFloat(data.markers[i].longitude);
             var marker = L.marker([lat, lng]).addTo(mymap);
-            marker.bindPopup(
-              "<b>Nama Lokasi:</b> " + data.markers[i].nama_lokasi
-            );
+            marker.bindPopup("<b>Nama Lokasi:</b> " + data.markers[i].nama_lokasi);
           }
 
           // circles
@@ -41,9 +36,7 @@ $(document).ready(function () {
               fillOpacity: 0.2,
               radius: radius,
             }).addTo(circleLayer);
-            circle.bindPopup(
-              "Barbershop yang masuk kawasan UPN dalam radius 2km"
-            );
+            circle.bindPopup("Barbershop yang masuk kawasan UPN dalam radius 2km");
           }
         }
       },
