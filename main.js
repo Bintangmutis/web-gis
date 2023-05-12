@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // inisialisasi map
-  const mymap = L.map("mapid").setView([-7.312840928060894, 112.79138725175287], 15);
+  const mymap = L.map("mapid").setView([-7.312840928060894, 112.79138725175287], 14);
   L.tileLayer("https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
     attribution: "Persebaran Barbershop",
     maxZoom: 18,
