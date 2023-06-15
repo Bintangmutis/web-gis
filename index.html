@@ -5,27 +5,28 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-      #header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        font-size: 2rem;
-      }
-      #mapid {
-        height: 750px;
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header">Persebaran Barbershop di Rungkut Surabaya</div>
-    <div id="mapid"></div>
+    <div id="headbar">Persebaran Barbershop di Rungkut Surabaya</div>
+    <div id="sidebar">
+      <ul>
+        <br />
+        <li><a href="index.html" id="sidebutton1" class="oval-button">Home</a></li>
+        <br />
+        <li>
+          <a href="inputbarber.html" id="sidebutton2" class="oval-button">Input Barbershop</a>
+        </li>
+        <br />
+        <li>
+          <a href="deletebarber.html" id="sidebutton3" class="oval-button">Delete Barbershop</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="map-container">
+      <div id="mapid"></div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

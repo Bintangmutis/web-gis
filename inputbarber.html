@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Barbershop - Persebaran Barbershop di Rungkut Surabaya</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="headbar">Input Barbershop - Persebaran Barbershop di Rungkut Surabaya</div>
+    <div id="sidebar">
+      <ul>
+        <br />
+        <li><a href="index.html" id="sidebutton1" class="oval-button">Home</a></li>
+        <br />
+        <li>
+          <a href="inputbarber.html" id="sidebutton2" class="oval-button">Input Barbershop</a>
+        </li>
+        <br />
+        <li>
+          <a href="deletebarber.html" id="sidebutton3" class="oval-button">Delete Barbershop</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="form-container">
+      <h2>Input Barbershop</h2>
+      <form id="barbershop-form">
+        <input type="hidden" id="barbershop-id" />
+        <label for="nama_lokasi">Nama Lokasi:</label>
+        <input type="text" id="nama_lokasi" required />
+        <br />
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" required />
+        <br />
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" required />
+        <br />
+        <button type="submit" id="submit-button">Submit</button>
+      </form>
+      <div id="barbershop-list"></div>
+    </div>
+    <script src="inputbarber.js"></script>
+  </body>
+</html>

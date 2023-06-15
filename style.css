@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#headbar {
+  background-color: #72bcfd;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#sidebar {
+  background-color: #b9e4ff;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  padding: 1rem;
+  z-index: 999;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  margin: 10px 0;
+}
+
+#sidebar ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+#sidebar ul li a:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.oval-button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  background-color: #72bcfd;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.oval-button:hover {
+  background-color: #555;
+}
+
+#map-container {
+  margin-left: 235px;
+  margin-top: 60px;
+  height: calc(100% - 60px);
+  width: calc(100% - 235px);
+  position: absolute;
+}
+
+#mapid {
+  height: 100%;
+  width: 100%;
+}
+
+#form-container {
+  background-color: #e0f0ff;
+  margin-left: 235px;
+  margin-top: 60px;
+  padding: 2rem;
+  height: calc(100% - 60px);
+  width: calc(100% - 235px);
+  position: absolute;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#form-container h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#barbershop-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#barbershop-form label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#barbershop-form input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#barbershop-form button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #72bcfd;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#barbershop-form button:hover {
+  background-color: #ffffff;
+}
+
+#barbershop-list {
+  margin-top: 1rem;
+}
+
+.barbershop-item {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.barbershop-item:hover {
+  background-color: #72bcfd;
+  color: #000;
+}
+
+table {
+  width: 20%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+th {
+  background-color: #b9e4ff;
+}

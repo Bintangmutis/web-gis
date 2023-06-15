@@ -7,6 +7,7 @@ $(document).ready(function () {
   }).addTo(mymap);
 
   // Layer
+  const nodelayer = L.layerGroup().addTo(mymap);
   const circleLayer = L.layerGroup().addTo(mymap);
   const polygonLayer = L.layerGroup().addTo(mymap);
 
@@ -22,7 +23,7 @@ $(document).ready(function () {
           for (var i = 0; i < data.markers.length; i++) {
             var lat = parseFloat(data.markers[i].latitude);
             var lng = parseFloat(data.markers[i].longitude);
-            var marker = L.marker([lat, lng]).addTo(mymap);
+            var marker = L.marker([lat, lng]).addTo(nodelayer);
             marker.bindPopup("<b>Nama Lokasi:</b> " + data.markers[i].nama_lokasi);
           }
 
